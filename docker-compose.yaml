@@ -1,0 +1,20 @@
+version: '3'
+services:
+  oracle:
+    image: store/oracle/database-enterprise:12.2.0.1
+    ports:
+        - 1521:1521
+        - 1527:1521
+    environment:
+        - ORACLE_ALLOW_REMOTE=true
+        - WEB_CONSOLE=false
+        - ORACLE_SID=xe 
+  rabbitmq:
+    image: rabbitmq:management
+    expose:
+     - "5672"
+    ports:
+     - "15672:15672"
+     - "5672:5672"
+    networks:
+      - default
