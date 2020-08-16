@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: Crud_Produtos
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  datasource:
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    url: jdbc:oracle:thin:@localhost:1521/ORCLCDB.localdomain
+    username: desafio
+    password: desafio
+
+server:
+  port: 8080

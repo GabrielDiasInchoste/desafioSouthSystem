@@ -16,15 +16,20 @@ public class PautaService {
 	@Autowired
 	private PautaRepository pautaRepository;
 
-	public PautaEntity getPauta(Integer pautaId) {
+	public PautaEntity getPauta(Integer pautaId) throws Exception {
 
 		log.info("PautaService.getPauta - start - pautaId: {}", pautaId);
 
 		Optional<PautaEntity> pautaEntity = pautaRepository.findById(pautaId);
+		if (pautaEntity.isPresent()) {
+			log.info("PautaService.getPauta - end - pautaId: {}", pautaId);
+			return pautaEntity.get();
 
-		log.info("PautaService.getPauta - end - pautaId: {}", pautaId);
+		}else {
+			log.warn("PautaService.getPauta - NADA - pautaId: {}", pautaId);
+			return new PautaEntity();
+		}
 
-		return pautaEntity.get();
 	}
 
 }
