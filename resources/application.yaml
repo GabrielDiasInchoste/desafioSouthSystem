@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: desafioSouthSystem
+  flyway:
+    enabled: true
+    baseline-on-migrate: true
+  datasource:
+    url: jdbc:oracle:thin:@//localhost:1521/ORCLCDB.localdomain
+    username: desafio
+    password: desafio
+    driver-class-name: oracle.jdbc.driver.OracleDriver
+    
+server:
+  port: 8080

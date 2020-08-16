@@ -8,7 +8,6 @@ services:
     environment:
         - ORACLE_ALLOW_REMOTE=true
         - WEB_CONSOLE=false
-        - ORACLE_SID=xe 
   rabbitmq:
     image: rabbitmq:management
     expose:
