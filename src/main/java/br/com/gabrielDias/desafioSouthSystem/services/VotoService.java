@@ -27,21 +27,6 @@ public class VotoService {
 	@Autowired
 	private PautaService pautaService;
 	
-	public VotoEntity getVoto(Integer votoId) throws Exception {
-		log.info("VotoService.getVoto - start - votoId: {}", votoId);
-
-		Optional<VotoEntity> votoEntity = votoRepository.findById(votoId);
-		if (votoEntity.isPresent()) {
-			log.info("VotoService.getVoto - end - votoId: {}", votoId);
-			return votoEntity.get();
-
-		} else {
-			log.error("VotoService.getVoto - Pauta nao encontrada - votoId: {}", votoId);
-			throw new Exception("Voto nao encontrada");
-		}
-	}
-
-	
 	public VotoEntity votar(Integer pautaId,VotoDTO votoDTO) throws Exception {
 		log.info("VotoService.iniciarVoto - start - pautaId: {}, votoDTO:{}",pautaId ,votoDTO);
 		VotoEntity voto = new VotoEntity();

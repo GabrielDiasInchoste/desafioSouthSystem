@@ -8,12 +8,3 @@ services:
     environment:
         - ORACLE_ALLOW_REMOTE=true
         - WEB_CONSOLE=false
-  rabbitmq:
-    image: rabbitmq:management
-    expose:
-     - "5672"
-    ports:
-     - "15672:15672"
-     - "5672:5672"
-    networks:
-      - default

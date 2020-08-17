@@ -48,7 +48,7 @@ public class PautaController {
 	}
 	
 	@PostMapping(value = "pauta/{pautaId}/votar", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<VotoEntity> iniciarSessao(@PathVariable(value = "pautaId") Integer pautaId,@RequestBody VotoDTO votoDTO) throws Exception {
+	public ResponseEntity<VotoEntity> votarPauta(@PathVariable(value = "pautaId") Integer pautaId,@RequestBody VotoDTO votoDTO) throws Exception {
 
 		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(votoService.votar(pautaId,votoDTO));
 	}
