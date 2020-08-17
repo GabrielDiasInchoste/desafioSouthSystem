@@ -1,7 +1,6 @@
 package br.com.gabrielDias.desafioSouthSystem.entity;
 
 import java.io.Serializable;
-import java.time.ZonedDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -19,21 +18,18 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-@Table(name = "PAUTA")
-public class PautaEntity implements Serializable{
+@Table(name = "ASSOCIADO")
+public class AssociadoEntity implements Serializable{
 
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "PAUTA_ID_SEQ")
-	@SequenceGenerator(name = "PAUTA_ID_SEQ", sequenceName = "PAUTA_ID_SEQ", allocationSize = 1)
-	@Column(name = "PAUTA_ID")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "ASSOCIADO_ID_SEQ")
+	@SequenceGenerator(name = "ASSOCIADO_ID_SEQ", sequenceName = "ASSOCIADO_ID_SEQ", allocationSize = 1)
+	@Column(name = "ASSOCIADO_ID")
 	private Integer id;
 
-	@Column(name = "NOME")
-	private String nome;
+	@Column(name = "CPF")
+	private Integer cpf;
 	
-	@Column(name = "TEMPO")
-	private ZonedDateTime tempo;
-
 }
