@@ -42,7 +42,7 @@ public class PautaController {
 	}
 	
 	@PostMapping(value = "pauta", produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<PautaEntity> postPauta(@RequestBody PautaDTO pauta) throws Exception {
+	public ResponseEntity<PautaEntity> postPauta(@RequestBody PautaDTO pauta) {
 
 		return ResponseEntity.status(HttpStatus.OK).contentType(MediaType.APPLICATION_JSON).body(pautaService.postPauta(pauta));
 	}

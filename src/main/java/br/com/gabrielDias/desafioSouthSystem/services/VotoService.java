@@ -41,7 +41,7 @@ public class VotoService {
 		voto.setVoto(votoDTO.getVoto());
 		votoRepository.save(voto);
 
-		log.info("VotoService.iniciarVoto - end - pautaId: {}, votoDTO:{}",pautaId ,votoDTO);
+		log.info("VotoService.iniciarVoto - end - pautaId: {}, votoEntity:{}",pautaId ,voto);
 		return voto;
 		
 	}
@@ -50,7 +50,7 @@ public class VotoService {
 		Optional<VotoEntity> voto = votoRepository.findByPautaIdAndAssociadoId(pauta.getId(),associado.getId());
 
 		if (voto.isPresent()) {
-			log.error("VotoService.iniciarVoto - Associado ja votou nessa pauta - pauta: {}", pauta);
+			log.error("VotoService.iniciarVoto - Associado ja votou nessa pauta - pauta: {}, associado: {}", pauta,associado);
 			throw new Exception("Associado ja votou nessa pauta");
 		}
 		if(pauta.getTempo().isBefore(ZonedDateTime.now())) {
@@ -65,7 +65,8 @@ public class VotoService {
 		if(associadoEntity.isPresent()) {
 			return associadoEntity.get();
 		}else {
-			
+			log.info("VotoService.getAssociado - Criando novo associado - cpf: {}", votoDTO.getCpf());
+
 			AssociadoEntity associado = new AssociadoEntity();
 			associado.setCpf(votoDTO.getCpf());
 			associadoRepository.save(associado);

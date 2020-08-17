@@ -50,7 +50,7 @@ public class PautaService {
 			pautaEntity.setTempo(ZonedDateTime.now().plusMinutes(1));
 		}
 		pautaRepository.save(pautaEntity);
-		log.info("PautaService.postPauta - end - PautaDTO: {}", pauta);
+		log.info("PautaService.postPauta - end - PautaEntity: {}", pautaEntity);
 
 		return pautaEntity;
 	}
