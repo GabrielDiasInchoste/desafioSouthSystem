@@ -1,7 +1,7 @@
 # desafioSouthSystem
 Projeto criado usando Java JDK 8 e SpringBoot, através do link https://start.spring.io/.
 
-Documentação da api feita com Swagger - Link Local: http://localhost:3000/swagger-ui.html.
+Documentação da api feita com Swagger - Link Local: http://localhost:8080/swagger-ui.html.
 
 --- Inciar projeto ---
 
